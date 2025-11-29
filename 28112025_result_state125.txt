@@ -1,0 +1,55 @@
+python all10.py --mode train --data GECCO --root_path ./
+
+python all10.py --mode test --data GECCO --root_path ./
+
+######################################################################################
+
+(base) kapil@Kapil-MacBook v3 % python all10.py --mode train --data GECCO --root_path ./ 
+
+Using cpu or mps
+Args in experiment:
+Namespace(mode='train', configs_path='./configs/', save_path='./test_results/', root_path='./', data='GECCO', data_origin='DADA', use_gpu=True, gpu=0, gpu_type='cuda', use_multi_gpu=False, devices='0,1,2,3', method='spot', t=[0.1], metrics=['best_f1', 'auc', 'r_auc', 'vus'], device=device(type='mps'))
+Use CPU
+[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
+[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
+[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
+[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv1d'>.
+[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
+     params    flops
+0  927.236K  37.753M
+loading GECCO(train) percentage: 100% ...done!
+loading GECCO(val) percentage: 100% ...done!
+Epoch: 1 cost time: 51.42342972755432
+Epoch: 1, Steps: 1 | Train Loss: 1.2640568 Vali Loss: 2.0908313
+Validation loss decreased (inf --> 2.090831).  Saving model ...
+Updating learning rate to 0.0001
+loading GECCO(test) percentage: 100% ...done!
+loading model...done
+   thre_best  ACC_best    P_best    R_best   F1_best
+0  59.389267  0.991653  0.825532  0.265753  0.402073
+    AUC_ROC   AUC_PR
+0  0.709896  0.26951
+   R_AUC_ROC  R_AUC_PR
+0   0.529664  0.046414
+    VUS_ROC    VUS_PR
+0  0.655753  0.052696
+(base) kapil@Kapil-MacBook v3 % python all10.py --mode train --data GECCO --root_path ./
+(base) kapil@Kapil-MacBook v3 % python all10.py --mode test --data GECCO --root_path ./
+
+Using cpu or mps
+Args in experiment:
+Namespace(mode='test', configs_path='./configs/', save_path='./test_results/', root_path='./', data='GECCO', data_origin='DADA', use_gpu=True, gpu=0, gpu_type='cuda', use_multi_gpu=False, devices='0,1,2,3', method='spot', t=[0.1], metrics=['best_f1', 'auc', 'r_auc', 'vus'], device=device(type='mps'))
+Use CPU
+loading GECCO(test) percentage: 100% ...done!
+loading model...done
+   thre_best  ACC_best    P_best    R_best   F1_best
+0  59.389267  0.991653  0.825532  0.265753  0.402073
+    AUC_ROC   AUC_PR
+0  0.709896  0.26951
+   R_AUC_ROC  R_AUC_PR
+0   0.529664  0.046414
+    VUS_ROC    VUS_PR
+0  0.655753  0.052696
+(base) kapil@Kapil-MacBook v3 % 
+######################################################################################
+
